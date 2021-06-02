@@ -50,7 +50,7 @@ client.on('message', async msg => {
         const depth = Math.min(Math.max(parseInt(args[0]) || 5, 1), 9);
         game.agents = [new HumanAgent(game, msg.author), new MinimaxAgent(game, depth)];
         game.agents[0].avatar = await loadImage(game.agents[0].user.avatarURL({ format: "png" }));
-        game.agents[1].avatar = await loadImage("./assets/ai.png");
+        game.agents[1].avatar = await loadImage("./assets/Mancala_Brain.png");
         if (args.length >= 2) {
           const order = ["first", "second", "random"].includes(args[1].toLowerCase()) ? args[1].toLowerCase() : "first";
           if (order === "second" || (order === "random" && Math.round(Math.random()))) {
